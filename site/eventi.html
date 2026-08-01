@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eventi &mdash; Vivi Bariano</title>
+<meta name="description" content="Calendario degli eventi del paese di Bariano.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/vb_logo_SOLOCERCHIO.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/vb_logo_SOLOCERCHIO.png">
+<meta name="theme-color" content="#e0f5e6">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <img src="icons/vb_logo_SOLOCERCHIO.png" alt="">
+      <span class="brand-text"><strong>Vivi Bariano</strong><span>Lista Civica di Maggioranza</span></span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="eventi.html" aria-current="page">Eventi</a>
+      <a href="link-utili.html">Link utili</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Eventi a Bariano</h1>
+    <p>Tutti gli appuntamenti, le feste e le iniziative del paese.</p>
+  </section>
+
+  <section class="block">
+    <h2>In programma</h2>
+    <div class="card-list" id="events-list">
+      <p class="empty-state">Caricamento eventi...</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Eventi passati</h2>
+    <div class="card-list" id="events-past">
+      <p class="empty-state">Caricamento...</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Vivi Bariano &mdash; a cura della Lista Civica di Maggioranza del Comune di Bariano.<br>
+  Articoli e newsletter su <a href="https://vivibariano.substack.com" target="_blank" rel="noopener">Substack</a>.</p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

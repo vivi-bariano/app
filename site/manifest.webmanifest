@@ -1,0 +1,25 @@
+{
+  "name": "Vivi Bariano",
+  "short_name": "Vivi Bariano",
+  "description": "Articoli, eventi e informazioni utili per la vita a Bariano.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f4ec",
+  "theme_color": "#e0f5e6",
+  "lang": "it",
+  "icons": [
+    {
+      "src": "icons/vb_logo_SOLOCERCHIO.png",
+      "sizes": "250x250",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/vb_logo_SOLOCERCHIO.png",
+      "sizes": "250x250",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "title": "[Esempio] Festa di paese",
+    "date": "2026-08-15",
+    "time": "18:00",
+    "location": "Piazza principale, Bariano",
+    "description": "Sostituisci questo evento con i dati reali, oppure eliminalo. Vedi README.md per le istruzioni."
+  },
+  {
+    "title": "[Esempio] Consiglio comunale aperto",
+    "date": "2026-09-05",
+    "time": "20:30",
+    "location": "Sala consiliare, Municipio di Bariano",
+    "description": "Sostituisci questo evento con i dati reali, oppure eliminalo."
+  }
+]
