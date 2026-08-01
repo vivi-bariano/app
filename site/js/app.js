@@ -24,6 +24,7 @@ function renderArticles(container, articles, limit) {
   const items = limit ? articles.slice(0, limit) : articles;
   container.innerHTML = items.map(a => `
     <article class="card">
+      ${a.image ? `<a href="${a.link}" target="_blank" rel="noopener"><img class="card-image" src="${a.image}" alt="" loading="lazy"></a>` : ""}
       <a class="card-title" href="${a.link}" target="_blank" rel="noopener">${escapeHtml(a.title)}</a>
       <p class="meta">${formatArticleDate(a.pubDate)}</p>
       ${a.excerpt ? `<p class="excerpt">${escapeHtml(a.excerpt)}</p>` : ""}

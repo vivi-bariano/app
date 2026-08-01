@@ -56,6 +56,19 @@ function makeExcerpt(html) {
   return text.slice(0, EXCERPT_LENGTH).replace(/\s+\S*$/, "") + "…";
 }
 
+function extractImage(block, descriptionHtml) {
+  const enclosureMatch = block.match(/<enclosure[^>]*\burl="([^"]+)"[^>]*>/i);
+  if (enclosureMatch) return enclosureMatch[1];
+
+  const mediaMatch = block.match(/<media:content[^>]*\burl="([^"]+)"[^>]*>/i);
+  if (mediaMatch) return mediaMatch[1];
+
+  const imgMatch = descriptionHtml.match(/<img[^>]*\bsrc="([^"]+)"[^>]*>/i);
+  if (imgMatch) return imgMatch[1];
+
+  return "";
+}
+
 function parseRss(xml) {
   const items = xml.match(/<item[^>]*>[\s\S]*?<\/item>/g) || [];
   return items.map(block => {
@@ -68,7 +81,8 @@ function parseRss(xml) {
       title,
       link,
       pubDate,
-      excerpt: description ? makeExcerpt(description) : ""
+      excerpt: description ? makeExcerpt(description) : "",
+      image: extractImage(block, description)
     };
   }).filter(a => a.title && a.link);
 }
