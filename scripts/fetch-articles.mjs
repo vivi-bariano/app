@@ -80,16 +80,46 @@ async function main() {
     throw new Error("substackFeedUrl mancante in site/data/config.json");
   }
 
-  const res = await fetch(feedUrl, {
-    headers: {
-      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-      "Accept": "application/rss+xml, application/xml, text/xml, */*"
+  const browserHeaders = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "Accept": "application/rss+xml, application/xml, text/xml, */*"
+  };
+
+  // Substack blocca le richieste dirette dai server di GitHub Actions (403),
+  // indipendentemente dallo User-Agent: probabilmente un blocco per intervallo IP.
+  // Come fallback, passiamo attraverso un proxy pubblico che effettua la
+  // richiesta con un altro indirizzo IP.
+  const attempts = [
+    { label: "diretto", url: feedUrl },
+    { label: "proxy allorigins", url: `https://api.allorigins.win/raw?url=${encodeURIComponent(feedUrl)}` },
+    { label: "proxy r.jina.ai", url: `https://r.jina.ai/${feedUrl}` }
+  ];
+
+  let xml = null;
+  let lastError = null;
+  for (const attempt of attempts) {
+    try {
+      const res = await fetch(attempt.url, { headers: browserHeaders });
+      if (!res.ok) {
+        lastError = new Error(`${attempt.label}: ${res.status} ${res.statusText}`);
+        continue;
+      }
+      const text = await res.text();
+      if (!text.includes("<item") && !text.includes("<rss")) {
+        lastError = new Error(`${attempt.label}: risposta senza contenuto RSS riconoscibile`);
+        continue;
+      }
+      xml = text;
+      console.log(`Feed scaricato con successo (${attempt.label})`);
+      break;
+    } catch (err) {
+      lastError = new Error(`${attempt.label}: ${err.message}`);
     }
-  });
-  if (!res.ok) {
-    throw new Error(`Fetch feed fallito: ${res.status} ${res.statusText}`);
   }
-  const xml = await res.text();
+
+  if (!xml) {
+    throw new Error(`Fetch feed fallito su tutti i tentativi. Ultimo errore: ${lastError?.message}`);
+  }
 
   let articles = parseRss(xml);
   articles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
