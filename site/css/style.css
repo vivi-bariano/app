@@ -1,7 +1,9 @@
 :root {
-  --green: #2f6b3c;
-  --green-dark: #204a29;
-  --gold: #e0a500;
+  --green: #3e6b52;
+  --green-dark: #26493a;
+  --green-header-bg: #e0f5e6;
+  --red: #c6294a;
+  --red-dark: #9c1f3a;
   --cream: #f7f4ec;
   --ink: #24291f;
   --muted: #6b7062;
@@ -34,13 +36,13 @@ a {
 }
 
 header.site-header {
-  background: var(--green);
-  color: #fff;
+  background: var(--green-header-bg);
+  color: var(--green-dark);
   padding: 1rem 1.25rem;
   position: sticky;
   top: 0;
   z-index: 10;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .header-inner {
@@ -57,7 +59,7 @@ header.site-header {
   align-items: center;
   gap: 0.6rem;
   text-decoration: none;
-  color: #fff;
+  color: var(--green-dark);
 }
 
 .brand img {
@@ -74,25 +76,31 @@ header.site-header {
 .brand-text span {
   display: block;
   font-size: 0.72rem;
-  opacity: 0.85;
+  opacity: 0.75;
 }
 
 nav.main-nav {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 nav.main-nav a {
-  color: #fff;
+  color: var(--green-dark);
   text-decoration: none;
-  font-size: 0.92rem;
-  padding: 0.35rem 0.1rem;
-  border-bottom: 2px solid transparent;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
 }
 
-nav.main-nav a[aria-current="page"],
 nav.main-nav a:hover {
-  border-bottom-color: var(--gold);
+  border-color: var(--green);
+}
+
+nav.main-nav a[aria-current="page"] {
+  background: var(--red);
+  color: #fff;
 }
 
 main {
@@ -124,14 +132,18 @@ main {
 
 .install-btn {
   margin-top: 1rem;
-  background: var(--gold);
-  color: var(--green-dark);
+  background: var(--red);
+  color: #fff;
   border: none;
   padding: 0.55rem 1rem;
   border-radius: 999px;
   font-weight: 600;
   cursor: pointer;
   display: none;
+}
+
+.install-btn:hover {
+  background: var(--red-dark);
 }
 
 .install-btn.visible {
