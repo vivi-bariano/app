@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="96" fill="#2f6b3c"/>
+  <g fill="#f4c95d">
+    <path d="M256 96c-16 48-64 80-64 144 0 44 28 80 64 96 36-16 64-52 64-96 0-64-48-96-64-144z"/>
+  </g>
+  <text x="256" y="420" font-family="Georgia, 'Times New Roman', serif" font-size="120" font-weight="700" fill="#ffffff" text-anchor="middle">VB</text>
+</svg>

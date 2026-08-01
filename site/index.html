@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vivi Bariano</title>
+<meta name="description" content="Articoli, eventi e informazioni utili per la vita a Bariano.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon.svg">
+<meta name="theme-color" content="#2f6b3c">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <img src="icons/icon.svg" alt="">
+      <span class="brand-text"><strong>Vivi Bariano</strong><span>Lista Civica di Maggioranza</span></span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="eventi.html">Eventi</a>
+      <a href="link-utili.html">Link utili</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Bentornato/a a Vivi Bariano</h1>
+    <p>Articoli, eventi del paese e informazioni utili, tutto in un unico posto. Installa l'app per averla sempre a portata di mano.</p>
+    <button id="install-btn" class="install-btn">Installa l'app</button>
+  </section>
+
+  <section class="block" id="articoli">
+    <h2>Ultimi articoli <a class="see-all" href="https://vivibariano.substack.com" target="_blank" rel="noopener">Vai a Substack &rarr;</a></h2>
+    <div class="card-list" id="articles-list">
+      <p class="empty-state">Caricamento articoli...</p>
+    </div>
+  </section>
+
+  <section class="block" id="eventi">
+    <h2>Prossimi eventi <a class="see-all" href="eventi.html">Vedi tutti &rarr;</a></h2>
+    <div class="card-list" id="events-preview">
+      <p class="empty-state">Caricamento eventi...</p>
+    </div>
+  </section>
+
+  <section class="block" id="link">
+    <h2>Link utili <a class="see-all" href="link-utili.html">Vedi tutti &rarr;</a></h2>
+    <div class="link-list" id="links-preview">
+      <p class="empty-state">Caricamento link...</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Vivi Bariano &mdash; a cura della Lista Civica di Maggioranza del Comune di Bariano.<br>
+  Articoli e newsletter su <a href="https://vivibariano.substack.com" target="_blank" rel="noopener">Substack</a>.</p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
