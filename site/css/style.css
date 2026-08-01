@@ -134,7 +134,7 @@ main {
   margin-top: 1rem;
   background: var(--red);
   color: #fff;
-  border: none;
+  border: 2px solid #fff;
   padding: 0.55rem 1rem;
   border-radius: 999px;
   font-weight: 600;
