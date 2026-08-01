@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   update-articles:
@@ -24,6 +25,7 @@ jobs:
         run: node scripts/fetch-articles.mjs
 
       - name: Commit se ci sono cambiamenti
+        id: commit
         run: |
           if ! git diff --quiet -- site/data/articles.json; then
             git config user.name "github-actions[bot]"
@@ -31,6 +33,17 @@ jobs:
             git add site/data/articles.json
             git commit -m "Aggiorna articoli da Substack"
             git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           else
             echo "Nessuna modifica agli articoli."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           fi
+
+      # Un push fatto con il GITHUB_TOKEN di un'Action non fa ripartire altri
+      # workflow (per evitare loop infiniti), quindi il deploy su Pages non
+      # scatterebbe da solo: lo avviamo esplicitamente via API.
+      - name: Avvia la pubblicazione su Pages
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy-pages.yml --ref "${{ github.ref_name }}"
