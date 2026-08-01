@@ -94,7 +94,7 @@ lanciarlo manualmente da GitHub: scheda **Actions** →
    automaticamente. Puoi anche avviarlo a mano da
    **Actions → Pubblica su GitHub Pages → Run workflow**.
 3. L'indirizzo pubblico sarà del tipo
-   `https://vivibariano.github.io/app/`. Se vuoi un
+   `https://vivi-bariano.github.io/app/`. Se vuoi un
    dominio tuo (es. `www.vivibariano.it`), configuralo in
    **Settings → Pages → Custom domain**.
 
