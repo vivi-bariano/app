@@ -17,7 +17,7 @@ site/
   js/app.js                                  rendering dati + logica PWA
   sw.js                                       service worker (offline + installabilità)
   manifest.webmanifest                        manifest PWA (nome, icona, colori)
-  icons/icon.svg                              icona segnaposto — sostituiscila con il vero logo
+  icons/vb_logo_SOLOCERCHIO.png                logo
   data/config.json                            indirizzo feed RSS Substack
   data/articles.json                          articoli (generato automaticamente, non modificarlo a mano)
   data/events.json                            eventi del paese (modifica qui)
@@ -114,7 +114,8 @@ Poi apri l'indirizzo indicato nel terminale (es. `http://localhost:8000`).
 
 ## Logo
 
-`site/icons/icon.svg` è un'icona segnaposto (cerchio verde con "VB").
-Sostituiscila con il logo vero di Vivi Bariano quando lo avrai, mantenendo
-lo stesso nome file oppure aggiornando i riferimenti in
-`manifest.webmanifest` e negli `<head>` delle pagine HTML.
+`site/icons/vb_logo_SOLOCERCHIO.png` è il logo di Vivi Bariano. Per
+sostituirlo con una versione aggiornata, mantieni lo stesso nome file,
+oppure carica il nuovo file e aggiorna i riferimenti in
+`manifest.webmanifest` e negli `<head>` delle pagine HTML (`index.html`,
+`eventi.html`, `link-utili.html`) e in `sw.js`.

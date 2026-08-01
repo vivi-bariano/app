@@ -7,7 +7,7 @@ const APP_SHELL = [
   "css/style.css",
   "js/app.js",
   "manifest.webmanifest",
-  "icons/icon.svg"
+  "icons/vb_logo_SOLOCERCHIO.png"
 ];
 
 self.addEventListener("install", (event) => {

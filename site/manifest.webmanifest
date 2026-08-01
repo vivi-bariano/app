@@ -10,15 +10,15 @@
   "lang": "it",
   "icons": [
     {
-      "src": "icons/icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "icons/vb_logo_SOLOCERCHIO.png",
+      "sizes": "250x250",
+      "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "icons/icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "icons/vb_logo_SOLOCERCHIO.png",
+      "sizes": "250x250",
+      "type": "image/png",
       "purpose": "maskable"
     }
   ]
