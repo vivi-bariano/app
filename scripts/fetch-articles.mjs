@@ -110,29 +110,29 @@ async function main() {
   ];
 
   let xml = null;
-  let lastError = null;
+  const errors = [];
   for (const attempt of attempts) {
     try {
       const res = await fetch(attempt.url, { headers: browserHeaders });
       if (!res.ok) {
-        lastError = new Error(`${attempt.label}: ${res.status} ${res.statusText}`);
+        errors.push(`${attempt.label}: ${res.status} ${res.statusText}`);
         continue;
       }
       const text = await res.text();
       if (!text.includes("<item") && !text.includes("<rss")) {
-        lastError = new Error(`${attempt.label}: risposta senza contenuto RSS riconoscibile`);
+        errors.push(`${attempt.label}: risposta senza contenuto RSS riconoscibile (${text.slice(0, 120).replace(/\s+/g, " ")})`);
         continue;
       }
       xml = text;
       console.log(`Feed scaricato con successo (${attempt.label})`);
       break;
     } catch (err) {
-      lastError = new Error(`${attempt.label}: ${err.message}`);
+      errors.push(`${attempt.label}: ${err.message}`);
     }
   }
 
   if (!xml) {
-    throw new Error(`Fetch feed fallito su tutti i tentativi. Ultimo errore: ${lastError?.message}`);
+    throw new Error(`Fetch feed fallito su tutti i tentativi:\n${errors.map(e => `  - ${e}`).join("\n")}`);
   }
 
   let articles = parseRss(xml);

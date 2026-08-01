@@ -134,16 +134,24 @@ main {
   margin-top: 1rem;
   background: var(--red);
   color: #fff;
-  border: none;
+  border: 2px solid #fff;
   padding: 0.55rem 1rem;
   border-radius: 999px;
   font-weight: 600;
   cursor: pointer;
   display: none;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
 }
 
 .install-btn:hover {
   background: var(--red-dark);
+}
+
+.install-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }
 
 .install-btn.visible {
