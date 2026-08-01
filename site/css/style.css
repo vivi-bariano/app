@@ -140,10 +140,18 @@ main {
   font-weight: 600;
   cursor: pointer;
   display: none;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
 }
 
 .install-btn:hover {
   background: var(--red-dark);
+}
+
+.install-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }
 
 .install-btn.visible {
