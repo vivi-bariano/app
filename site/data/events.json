@@ -1,10 +1,11 @@
 [
   {
-    "title": "[Esempio] Festa di paese",
-    "date": "2026-08-15",
-    "time": "18:00",
-    "location": "Piazza principale, Bariano",
-    "description": "Sostituisci questo evento con i dati reali, oppure eliminalo. Vedi README.md per le istruzioni."
+    "title": "Gita a Mantova",
+    "date": "2026-09-20",
+    "time": "7:30",
+    "location": "Ritrovo e partenza da Bariano",
+    "description": "Il Comune di Bariano organizza una gita a Mantova: visita di Palazzo Te (ore 9:30), tempo libero per il pranzo, visita a piedi del centro storico (Palazzo Ducale, Basilica Palatina di Santa Barbara, Basilica di Sant'Andrea) alle 14:30, rientro previsto per le 19:00. Quota € 85 a persona (minimo 40 partecipanti). Iscrizioni entro lunedì 17 agosto — info: 0363 95022 int. 1, cultura@comune.bariano.bg.it",
+    "image": "images/eventi/gita-mantova.jpg"
   },
   {
     "title": "[Esempio] Consiglio comunale aperto",

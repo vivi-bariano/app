@@ -220,7 +220,7 @@ section.block h2 a.see-all {
   color: #454a3d;
 }
 
-.event-card {
+.event-card-body {
   display: flex;
   gap: 0.9rem;
   align-items: flex-start;

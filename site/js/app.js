@@ -56,11 +56,14 @@ function renderEvents(container, events, { limit, includePast } = {}) {
     const month = isNaN(d) ? "" : MONTHS_IT[d.getMonth()];
     return `
       <article class="card event-card">
-        <div class="event-date"><span class="day">${day}</span><span class="month">${month}</span></div>
-        <div>
-          <span class="card-title" style="display:block">${escapeHtml(e.title)}</span>
-          <p class="meta">${[e.time, e.location].filter(Boolean).join(" &middot; ")}</p>
-          ${e.description ? `<p class="excerpt">${escapeHtml(e.description)}</p>` : ""}
+        ${e.image ? `<img class="card-image" src="${e.image}" alt="" loading="lazy">` : ""}
+        <div class="event-card-body">
+          <div class="event-date"><span class="day">${day}</span><span class="month">${month}</span></div>
+          <div>
+            <span class="card-title" style="display:block">${escapeHtml(e.title)}</span>
+            <p class="meta">${[e.time, e.location].filter(Boolean).join(" &middot; ")}</p>
+            ${e.description ? `<p class="excerpt">${escapeHtml(e.description)}</p>` : ""}
+          </div>
         </div>
       </article>
     `;
