@@ -11,27 +11,32 @@
     "title": "TPA Summer Festival",
     "date": "2026-07-09",
     "location": "Tin Pan Alley",
-    "description": "9–12 luglio 2026."
+    "description": "9–12 luglio 2026.",
+    "image": "images/eventi/tpa-summer-festival.jpg"
   },
   {
     "title": "3T Summer Camp",
     "date": "2026-07-13",
     "location": "Campo da basket, Via Diaz",
-    "description": "13–24 luglio 2026. Organizzato da Terzo Tempo ASD."
+    "description": "13–24 luglio 2026. Organizzato da Terzo Tempo ASD.",
+    "image": "images/eventi/3t-summer-camp.jpg"
   },
   {
     "title": "Al Parco che storia!",
     "date": "2026-07-22",
-    "description": "22 luglio 2026. Letture serali nei parchi comunali, organizzate dalla Biblioteca."
+    "description": "22 luglio 2026. Letture serali nei parchi comunali, organizzate dalla Biblioteca.",
+    "image": "images/eventi/al-parco-che-storia.jpg"
   },
   {
     "title": "Bariano senza tempo — Spettacoli",
     "date": "2026-07-24",
-    "description": "24–26 luglio 2026. Spettacolo di burattini, spettacolo teatrale e concerto musicale. Organizzati dal Comune con il contributo della Regione Lombardia \"Lombardia Style\"."
+    "description": "24–26 luglio 2026. Spettacolo di burattini, spettacolo teatrale e concerto musicale. Organizzati dal Comune con il contributo della Regione Lombardia \"Lombardia Style\".",
+    "image": "images/eventi/bariano-senza-tempo-spettacoli.jpg"
   },
   {
     "title": "Bariano senza tempo — Visite guidate",
     "date": "2026-07-25",
-    "description": "25–26 luglio 2026. Visite guidate al Convento dei Neveri e alla Chiesa Parrocchiale, mostra espositiva. Organizzati dal Comune con il contributo della Regione Lombardia \"Lombardia Style\"."
+    "description": "25–26 luglio 2026. Visite guidate al Convento dei Neveri e alla Chiesa Parrocchiale, mostra espositiva. Organizzati dal Comune con il contributo della Regione Lombardia \"Lombardia Style\".",
+    "image": "images/eventi/bariano-senza-tempo-visite-guidate.jpg"
   }
 ]

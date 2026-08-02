@@ -162,6 +162,13 @@ section.block {
   margin-bottom: 2.25rem;
 }
 
+.banner-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
 section.block h2 {
   font-size: 1.15rem;
   margin: 0 0 0.9rem;
