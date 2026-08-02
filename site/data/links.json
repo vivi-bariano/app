@@ -6,6 +6,30 @@
     "description": "Tutti gli articoli su Substack — iscrizione gratuita"
   },
   {
+    "category": "Social",
+    "label": "Facebook",
+    "url": "https://www.facebook.com/vivibariano",
+    "description": "Seguici su Facebook"
+  },
+  {
+    "category": "Social",
+    "label": "Instagram",
+    "url": "https://www.instagram.com/vivibariano",
+    "description": "Seguici su Instagram"
+  },
+  {
+    "category": "Social",
+    "label": "YouTube",
+    "url": "https://www.youtube.com/@vivibariano",
+    "description": "Seguici su YouTube"
+  },
+  {
+    "category": "Social",
+    "label": "Canale WhatsApp",
+    "url": "https://whatsapp.com/channel/0029VaYpzjEIXnlhPedyfb02",
+    "description": "Iscriviti al canale WhatsApp"
+  },
+  {
     "category": "Sicurezza",
     "label": "Polizia Locale",
     "url": "#",
