@@ -262,6 +262,19 @@ section.block h2 a.see-all {
   gap: 0.6rem;
 }
 
+.link-category {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--green);
+  margin: 1.1rem 0 -0.1rem;
+}
+
+.link-category:first-child {
+  margin-top: 0;
+}
+
 .link-item {
   display: flex;
   justify-content: space-between;

@@ -1,17 +1,104 @@
 [
   {
+    "category": "Newsletter",
     "label": "Newsletter Vivi Bariano",
     "url": "https://vivibariano.substack.com/",
     "description": "Tutti gli articoli su Substack — iscrizione gratuita"
   },
   {
+    "category": "Sicurezza",
+    "label": "Polizia Locale",
+    "url": "#",
+    "description": "[Da inserire] Telefono — Orari"
+  },
+  {
+    "category": "Sicurezza",
+    "label": "Carabinieri — Stazione di Romano di Lombardia",
+    "url": "#",
+    "description": "[Da inserire] Telefono — Orari"
+  },
+  {
+    "category": "Sicurezza",
+    "label": "Polizia di Stato — Commissariato di Treviglio",
+    "url": "#",
+    "description": "[Da inserire] Telefono — Orari"
+  },
+  {
+    "category": "Sanità",
+    "label": "Medici di base",
+    "url": "#",
+    "description": "[Da inserire] Nomi, telefono, orari di ambulatorio"
+  },
+  {
+    "category": "Sanità",
+    "label": "Farmacia",
+    "url": "#",
+    "description": "[Da inserire] Telefono — Orari"
+  },
+  {
+    "category": "Sanità",
+    "label": "Guardia medica",
+    "url": "#",
+    "description": "[Da inserire] Telefono — Orari (notturna e festiva)"
+  },
+  {
+    "category": "Sanità",
+    "label": "Assistente sociale",
+    "url": "#",
+    "description": "[Da inserire] Telefono — Orari di ricevimento"
+  },
+  {
+    "category": "Comune",
     "label": "[Da verificare] Comune di Bariano — sito ufficiale",
     "url": "https://www.comune.bariano.bg.it/",
     "description": "Sostituisci l'URL con quello vero del sito del Comune — vedi README.md"
   },
   {
-    "label": "[Esempio] Numeri utili",
-    "url": "https://vivibariano.substack.com",
-    "description": "Sostituisci con il link reale (farmacia, guardia medica, ecc.) — vedi README.md"
+    "category": "Comune",
+    "label": "Ufficio anagrafe",
+    "url": "#",
+    "description": "[Da inserire] Telefono — Orari sportello"
+  },
+  {
+    "category": "Comune",
+    "label": "Raccolta rifiuti / Ecocentro",
+    "url": "#",
+    "description": "[Da inserire] Calendario differenziata — Orari ecocentro"
+  },
+  {
+    "category": "Servizi",
+    "label": "Biblioteca comunale",
+    "url": "#",
+    "description": "[Da inserire] Telefono — Orari"
+  },
+  {
+    "category": "Servizi",
+    "label": "Scuole",
+    "url": "#",
+    "description": "[Da inserire] Contatti segreteria"
+  },
+  {
+    "category": "Servizi",
+    "label": "Ufficio postale",
+    "url": "#",
+    "description": "[Da inserire] Telefono — Orari"
+  },
+  {
+    "category": "Servizi",
+    "label": "Protezione Civile",
+    "url": "#",
+    "description": "[Da inserire] Telefono"
+  },
+  {
+    "category": "Parrocchia",
+    "label": "Parrocchia di Bariano",
+    "url": "#",
+    "description": "[Da inserire] Telefono — Orari messe"
+  },
+  {
+    "category": "Associazioni",
+    "label": "Associazioni del paese",
+    "url": "#",
+    "description": "[Da inserire] Elenco associazioni e contatti"
   }
 ]

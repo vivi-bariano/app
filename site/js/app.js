@@ -70,13 +70,8 @@ function renderEvents(container, events, { limit, includePast } = {}) {
   }).join("");
 }
 
-function renderLinks(container, links, limit) {
-  if (!links || links.length === 0) {
-    container.innerHTML = '<p class="empty-state">Nessun link disponibile.</p>';
-    return;
-  }
-  const items = limit ? links.slice(0, limit) : links;
-  container.innerHTML = items.map(l => `
+function renderLinkItem(l) {
+  return `
     <a class="link-item" href="${l.url}" target="_blank" rel="noopener">
       <span>
         <span class="label">${escapeHtml(l.label)}</span>
@@ -84,6 +79,35 @@ function renderLinks(container, links, limit) {
       </span>
       <span aria-hidden="true">&rarr;</span>
     </a>
+  `;
+}
+
+function renderLinks(container, links, { limit, grouped } = {}) {
+  if (!links || links.length === 0) {
+    container.innerHTML = '<p class="empty-state">Nessun link disponibile.</p>';
+    return;
+  }
+
+  if (!grouped) {
+    const items = limit ? links.slice(0, limit) : links;
+    container.innerHTML = items.map(renderLinkItem).join("");
+    return;
+  }
+
+  const categories = [];
+  const byCategory = new Map();
+  links.forEach(l => {
+    const cat = l.category || "Altro";
+    if (!byCategory.has(cat)) {
+      byCategory.set(cat, []);
+      categories.push(cat);
+    }
+    byCategory.get(cat).push(l);
+  });
+
+  container.innerHTML = categories.map(cat => `
+    <h3 class="link-category">${escapeHtml(cat)}</h3>
+    ${byCategory.get(cat).map(renderLinkItem).join("")}
   `).join("");
 }
 
@@ -128,8 +152,8 @@ async function init() {
   if (linksPreview || linksList) {
     loadJSON("data/links.json")
       .then(links => {
-        if (linksPreview) renderLinks(linksPreview, links, 4);
-        if (linksList) renderLinks(linksList, links);
+        if (linksPreview) renderLinks(linksPreview, links, { limit: 4 });
+        if (linksList) renderLinks(linksList, links, { grouped: true });
       })
       .catch(() => {
         const msg = '<p class="empty-state">Impossibile caricare i link.</p>';
