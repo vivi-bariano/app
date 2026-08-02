@@ -158,6 +158,18 @@ main {
   display: inline-block;
 }
 
+.install-hint {
+  display: none;
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+  color: #fff;
+  opacity: 0.92;
+}
+
+.install-hint.visible {
+  display: block;
+}
+
 section.block {
   margin-bottom: 2.25rem;
 }

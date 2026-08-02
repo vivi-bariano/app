@@ -165,6 +165,18 @@ async function init() {
 
 function setupInstallPrompt() {
   const btn = document.getElementById("install-btn");
+  const iosHint = document.getElementById("install-hint-ios");
+  const isStandalone = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+  const isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+  if (isIos && !isStandalone && iosHint) {
+    const isSafari = !/CriOS|FxiOS|EdgiOS/.test(navigator.userAgent);
+    iosHint.textContent = isSafari
+      ? "Per installare l'app: tocca Condividi (icona con la freccia) e poi \"Aggiungi alla schermata Home\"."
+      : "Per installare l'app su iPhone apri questo sito in Safari, poi tocca Condividi e \"Aggiungi alla schermata Home\".";
+    iosHint.classList.add("visible");
+  }
+
   if (!btn) return;
   let deferredPrompt = null;
 
