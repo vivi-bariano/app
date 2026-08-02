@@ -31,45 +31,57 @@
   },
   {
     "category": "Sicurezza",
-    "label": "Polizia Locale",
-    "url": "#",
-    "description": "[Da inserire] Telefono — Orari"
+    "label": "Polizia Locale — Distretto Bassa Bergamasca Orientale",
+    "url": "tel:+3903639828",
+    "description": "Via Giacomo Rubini 24, Romano di Lombardia — Tel 0363/9828 — comando@comune.romano.bg.it. Lun 10:00–12:30 · Mar 10:00–12:30 · Gio 10:00–12:30 · Ven 15:00–17:00 · Sab 10:00–12:30 (mer, dom chiuso). Un agente è presente a Bariano il sabato mattina dalle 10:00 alle 11:30."
   },
   {
     "category": "Sicurezza",
     "label": "Carabinieri — Stazione di Romano di Lombardia",
-    "url": "#",
-    "description": "[Da inserire] Telefono — Orari"
+    "url": "tel:+390363910000",
+    "description": "Via G. Pascoli 86, Romano di Lombardia — Tel 0363 910000 — stbg128280@carabinieri.it"
   },
   {
     "category": "Sicurezza",
     "label": "Polizia di Stato — Commissariato di Treviglio",
-    "url": "#",
-    "description": "[Da inserire] Telefono — Orari"
+    "url": "tel:+390363313311",
+    "description": "Piazza del Popolo 3, Treviglio — Tel 0363 313311 — Fax 0363 313366 — dipps111.5100@pecps.poliziadistato.it"
   },
   {
     "category": "Sanità",
-    "label": "Medici di base",
-    "url": "#",
-    "description": "[Da inserire] Nomi, telefono, orari di ambulatorio"
+    "label": "Dott. Spassov Vladislav — medico di base",
+    "url": "tel:+393755780984",
+    "description": "V. Della Misericordia 11, Bariano — Tel 375 5780984 (su appuntamento). Lun 17:00–20:00 · Mar–Gio 10:00–13:00 · Mer a Morengo 10:00–13:00 · Ven 14:00–17:00"
   },
   {
     "category": "Sanità",
-    "label": "Farmacia",
-    "url": "#",
-    "description": "[Da inserire] Telefono — Orari"
+    "label": "Dr.ssa Gennaro Anna — medico di base",
+    "url": "tel:+393387235906",
+    "description": "V. Della Misericordia 11, Bariano — Tel 338 7235906 (su appuntamento). Lun 08:30–12:30 · Mar 08:30–10:30 · Mer 17:00–19:00 · Gio 17:00–20:00 · Ven 11:30–13:00"
   },
   {
     "category": "Sanità",
-    "label": "Guardia medica",
-    "url": "#",
-    "description": "[Da inserire] Telefono — Orari (notturna e festiva)"
+    "label": "Dr.ssa Cavagnini Sara — pediatra",
+    "url": "tel:+393922733294",
+    "description": "V. Della Misericordia 11, Bariano — Tel 392 2733294 (appuntamenti 8:30–10:00, consigli telefonici 13:00–14:00). Lun/Mar/Gio 09:30–12:30 · Mer 14:30–17:30 · Ven 13:00–16:00 (orario estivo lug–ago: Lun/Mar/Gio 09:30–11:30 · Mer 15:00–17:00 · Ven 13:00–15:00)"
+  },
+  {
+    "category": "Sanità",
+    "label": "Guardia medica — Continuità Assistenziale",
+    "url": "tel:116117",
+    "description": "Numero Unico 116 117 — assistenza sanitaria non urgente. Attivo lun–ven 20:00–8:00, festivi e prefestivi 24 ore su 24."
   },
   {
     "category": "Sanità",
     "label": "Assistente sociale",
-    "url": "#",
-    "description": "[Da inserire] Telefono — Orari di ricevimento"
+    "url": "mailto:servizisociali@comune.bariano.bg.it",
+    "description": "Comune di Bariano, Via Antonio Locatelli 4 — solo su appuntamento — servizisociali@comune.bariano.bg.it. Lun 08:30–12:30 e 13:00–17:00 · Mer 09:45–13:15 e 13:45–16:15"
+  },
+  {
+    "category": "Sanità",
+    "label": "Farmacia Maffeis",
+    "url": "tel:+39036395340",
+    "description": "Via John Fitzgerald Kennedy 2, Bariano — Tel 0363 95340. Lun–Sab 08:30–12:30 e 15:00–19:00 (orari soggetti a variazioni)"
   },
   {
     "category": "Comune",
@@ -79,45 +91,63 @@
   },
   {
     "category": "Comune",
-    "label": "Ufficio anagrafe",
-    "url": "#",
-    "description": "[Da inserire] Telefono — Orari sportello"
+    "label": "Ufficio anagrafe — Stato Civile",
+    "url": "tel:+39036395022",
+    "description": "Via Antonio Locatelli 4, Bariano — Tel 0363 95022 int. 2 — Fax 0363 957941 — PEC comune.bariano@legalmail.it. Lun 09:00–11:30 e 16:30–17:30 · Mar 09:00–12:30 · Gio 09:00–12:30 · Sab 09:00–11:30 (mer, ven, dom chiuso)"
   },
   {
     "category": "Comune",
-    "label": "Raccolta rifiuti / Ecocentro",
-    "url": "#",
-    "description": "[Da inserire] Calendario differenziata — Orari ecocentro"
+    "label": "Raccolta rifiuti / Isola Ecologica",
+    "url": "tel:+39036395022",
+    "description": "Via IV Novembre, Bariano — Tel 0363 95022. Lun 14:00–17:00 · Mer 14:00–17:00 · Sab 09:00–12:00 e 14:00–17:00 (mar, gio, ven, dom chiuso)"
   },
   {
     "category": "Servizi",
     "label": "Biblioteca comunale",
-    "url": "#",
-    "description": "[Da inserire] Telefono — Orari"
+    "url": "tel:+39036395022",
+    "description": "Piazza don A. Longo 18, Bariano — Tel 0363 95022 — bibliotebariano@virgilio.it. Lun 14:30–17:30 · Mar 15:00–17:30 · Mer 15:30–18:00 · Gio 15:00–17:30 · Sab 09:30–11:30 (ven, dom chiuso). Primo mercoledì del mese aperta anche 16:00–20:00."
   },
   {
     "category": "Servizi",
-    "label": "Scuole",
-    "url": "#",
-    "description": "[Da inserire] Contatti segreteria"
+    "label": "Scuola dell'infanzia — Luogo Pio Grattaroli",
+    "url": "tel:+39036395061",
+    "description": "Via Circonvallazione 50, Bariano — Tel 0363 95061 — luogopiograttaroli@gmail.com / scuolainfanzia.bariano@gmail.com. Segreteria su appuntamento."
+  },
+  {
+    "category": "Servizi",
+    "label": "Scuola primaria — Papa Giovanni XXIII",
+    "url": "tel:+390363958350",
+    "description": "Via Piave 11, Bariano — Tel 0363 958350 — uffici@icbariano.gov.it. Lun–Ven 08:30–16:00."
+  },
+  {
+    "category": "Servizi",
+    "label": "Scuola secondaria — Don Lorenzo Milani",
+    "url": "tel:+39036395049",
+    "description": "Via A. Diaz 9, Bariano — Tel 0363 95049 — uffici@icbariano.gov.it. Lun–Ven 08:00–14:00."
   },
   {
     "category": "Servizi",
     "label": "Ufficio postale",
-    "url": "#",
-    "description": "[Da inserire] Telefono — Orari"
+    "url": "tel:+390363941141",
+    "description": "Via Antonio Locatelli 13, Bariano — Tel 0363 941141. Lun–Ven 08:30–13:45 · Sab 08:30–12:45 (dom chiuso)."
   },
   {
     "category": "Servizi",
-    "label": "Protezione Civile",
-    "url": "#",
-    "description": "[Da inserire] Telefono"
+    "label": "Protezione Civile — Gruppo Bergamo Sud",
+    "url": "tel:+393358412614",
+    "description": "Intercomunale (Bariano, Fornovo San Giovanni, Morengo, Mozzanica, Pagazzano) — Tel/WhatsApp 335 841 2614 — bergamosud@gmail.com"
   },
   {
     "category": "Parrocchia",
-    "label": "Parrocchia di Bariano",
+    "label": "Parrocchia dei Santi Gervasio e Protasio",
+    "url": "tel:+39036395164",
+    "description": "Piazza Don Luigi Paganessi 2, Bariano — Parroco: Don Innocente Chiodi — Tel 0363 95164 — bariano@diocesibg.it"
+  },
+  {
+    "category": "Parrocchia",
+    "label": "Oratorio San Giovanni Bosco",
     "url": "#",
-    "description": "[Da inserire] Telefono — Orari messe"
+    "description": "Via Roma 32, Bariano"
   },
   {
     "category": "Associazioni",
