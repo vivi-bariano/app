@@ -13,5 +13,32 @@
     "time": "20:30",
     "location": "Sala consiliare, Municipio di Bariano",
     "description": "Sostituisci questo evento con i dati reali, oppure eliminalo."
+  },
+  {
+    "title": "TPA Summer Festival",
+    "date": "2026-07-09",
+    "location": "Tin Pan Alley",
+    "description": "9–12 luglio 2026."
+  },
+  {
+    "title": "3T Summer Camp",
+    "date": "2026-07-13",
+    "location": "Campo da basket, Via Diaz",
+    "description": "13–24 luglio 2026. Organizzato da Terzo Tempo ASD."
+  },
+  {
+    "title": "Al Parco che storia!",
+    "date": "2026-07-22",
+    "description": "22 luglio 2026. Letture serali nei parchi comunali, organizzate dalla Biblioteca."
+  },
+  {
+    "title": "Bariano senza tempo — Spettacoli",
+    "date": "2026-07-24",
+    "description": "24–26 luglio 2026. Spettacolo di burattini, spettacolo teatrale e concerto musicale. Organizzati dal Comune con il contributo della Regione Lombardia \"Lombardia Style\"."
+  },
+  {
+    "title": "Bariano senza tempo — Visite guidate",
+    "date": "2026-07-25",
+    "description": "25–26 luglio 2026. Visite guidate al Convento dei Neveri e alla Chiesa Parrocchiale, mostra espositiva. Organizzati dal Comune con il contributo della Regione Lombardia \"Lombardia Style\"."
   }
 ]
