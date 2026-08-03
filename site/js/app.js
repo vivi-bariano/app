@@ -210,8 +210,9 @@ function setupNotifyButton() {
     }
     syncVisibility();
     OneSignal.User.PushSubscription.addEventListener("change", syncVisibility);
-    btn.addEventListener("click", () => {
-      OneSignal.Notifications.requestPermission();
+    btn.addEventListener("click", async () => {
+      await OneSignal.Notifications.requestPermission();
+      await OneSignal.User.PushSubscription.optIn();
     });
   });
 }
