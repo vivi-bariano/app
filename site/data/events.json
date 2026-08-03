@@ -1,5 +1,12 @@
 [
   {
+    "title": "Test con iscritto pulito",
+    "date": "2026-12-24",
+    "location": "Prova",
+    "description": "Verrà rimosso subito.",
+    "image": ""
+  },
+  {
     "title": "Gita a Mantova",
     "date": "2026-09-20",
     "time": "7:30",
