@@ -1,0 +1,31 @@
+name: Notifica nuovi eventi
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/data/events.json"
+
+jobs:
+  notify-events:
+    runs-on: ubuntu-latest
+    if: ${{ secrets.ONESIGNAL_REST_API_KEY != '' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Estrai gli eventi prima di questo push
+        run: git show HEAD^:site/data/events.json > /tmp/events-before.json || echo "[]" > /tmp/events-before.json
+
+      - name: Notifica i nuovi eventi (push OneSignal)
+        env:
+          ONESIGNAL_APP_ID: "a0f59924-f1c0-45bb-b3d0-cb836d99604e"
+          ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
+        run: node scripts/notify-new-events.mjs /tmp/events-before.json site/data/events.json

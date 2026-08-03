@@ -21,6 +21,9 @@ jobs:
         with:
           node-version: "22"
 
+      - name: Salva gli articoli precedenti
+        run: cp site/data/articles.json /tmp/articles-before.json
+
       - name: Aggiorna site/data/articles.json
         run: node scripts/fetch-articles.mjs
 
@@ -47,3 +50,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run deploy-pages.yml --ref "${{ github.ref_name }}"
+
+      - name: Notifica i nuovi articoli (push OneSignal)
+        if: steps.commit.outputs.changed == 'true' && secrets.ONESIGNAL_REST_API_KEY != ''
+        env:
+          ONESIGNAL_APP_ID: "a0f59924-f1c0-45bb-b3d0-cb836d99604e"
+          ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
+        run: node scripts/notify-new-articles.mjs /tmp/articles-before.json site/data/articles.json
