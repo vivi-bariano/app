@@ -17,7 +17,7 @@
     OneSignal.init({
       appId: "a0f59924-f1c0-45bb-b3d0-cb836d99604e",
       safari_web_id: "web.onesignal.auto.02093de6-f6ab-427c-bf3a-c7ddb76bfc75",
-      serviceWorkerPath: "sw.js",
+      serviceWorkerPath: new URL("sw.js", location.href).pathname,
       serviceWorkerParam: { scope: new URL(".", location.href).pathname }
     });
   });
