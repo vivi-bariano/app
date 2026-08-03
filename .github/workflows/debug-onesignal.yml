@@ -1,0 +1,23 @@
+name: Debug OneSignal (temporaneo)
+
+on:
+  workflow_dispatch:
+    inputs:
+      subscription_id:
+        description: "ID OneSignal (subscription id) da testare"
+        required: true
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Invia notifica diretta a un subscription id
+        env:
+          ONESIGNAL_APP_ID: "a0f59924-f1c0-45bb-b3d0-cb836d99604e"
+          ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
+          SUB_ID: ${{ inputs.subscription_id }}
+        run: |
+          curl -sS -X POST "https://onesignal.com/api/v1/notifications" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -H "Authorization: Key ${ONESIGNAL_REST_API_KEY}" \
+            -d "{\"app_id\":\"${ONESIGNAL_APP_ID}\",\"include_subscription_ids\":[\"${SUB_ID}\"],\"headings\":{\"en\":\"Test diretto\"},\"contents\":{\"en\":\"Notifica di debug inviata direttamente a un subscription id\"}}"
