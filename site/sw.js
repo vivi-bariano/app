@@ -1,3 +1,5 @@
+importScripts("https://cdn.onesignal.com/sdks/web/v16/OneSignalSDKWorker.js");
+
 const CACHE_NAME = "vivi-bariano-v2";
 const APP_SHELL = [
   "./",

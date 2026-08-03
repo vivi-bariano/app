@@ -10,6 +10,17 @@
 <link rel="apple-touch-icon" href="icons/vb_logo_SOLOCERCHIO.png">
 <meta name="theme-color" content="#e0f5e6">
 <link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(function (OneSignal) {
+    OneSignal.init({
+      appId: "a0f59924-f1c0-45bb-b3d0-cb836d99604e",
+      serviceWorkerPath: "sw.js",
+      serviceWorkerParam: { scope: new URL(".", location.href).pathname }
+    });
+  });
+</script>
 </head>
 <body>
 <header class="site-header">
