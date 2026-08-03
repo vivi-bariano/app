@@ -23,6 +23,11 @@ async function main() {
     throw new Error("Uso: node notify-new-articles.mjs <before.json> <after.json>");
   }
 
+  if (!process.env.ONESIGNAL_REST_API_KEY) {
+    console.log("ONESIGNAL_REST_API_KEY non impostata: notifiche push saltate.");
+    return;
+  }
+
   const before = await readJsonSafe(beforePath);
   const after = await readJsonSafe(afterPath);
   const knownLinks = new Set(before.map(a => a.link));

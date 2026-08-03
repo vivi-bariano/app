@@ -52,7 +52,7 @@ jobs:
         run: gh workflow run deploy-pages.yml --ref "${{ github.ref_name }}"
 
       - name: Notifica i nuovi articoli (push OneSignal)
-        if: steps.commit.outputs.changed == 'true' && secrets.ONESIGNAL_REST_API_KEY != ''
+        if: steps.commit.outputs.changed == 'true'
         env:
           ONESIGNAL_APP_ID: "a0f59924-f1c0-45bb-b3d0-cb836d99604e"
           ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
