@@ -1,5 +1,12 @@
 [
   {
+    "title": "Test notifica push",
+    "date": "2026-12-31",
+    "location": "Prova",
+    "description": "Evento di prova per verificare le notifiche push. Verrà rimosso a breve.",
+    "image": ""
+  },
+  {
     "title": "Gita a Mantova",
     "date": "2026-09-20",
     "time": "7:30",
