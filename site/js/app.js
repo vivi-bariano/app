@@ -211,8 +211,11 @@ function setupNotifyButton() {
     syncVisibility();
     OneSignal.User.PushSubscription.addEventListener("change", syncVisibility);
     btn.addEventListener("click", async () => {
-      await OneSignal.Notifications.requestPermission();
-      await OneSignal.User.PushSubscription.optIn();
+      try {
+        await OneSignal.User.PushSubscription.optIn();
+      } catch (err) {
+        console.error("Errore nell'attivazione delle notifiche:", err);
+      }
     });
   });
 }
