@@ -1,5 +1,12 @@
 [
   {
+    "title": "Test finale notifiche",
+    "date": "2026-12-27",
+    "location": "Prova",
+    "description": "Ultimo test, verrà rimosso subito.",
+    "image": ""
+  },
+  {
     "title": "Gita a Mantova",
     "date": "2026-09-20",
     "time": "7:30",
