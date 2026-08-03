@@ -199,6 +199,23 @@ function setupInstallPrompt() {
   });
 }
 
+function setupNotifyButton() {
+  const btn = document.getElementById("notify-btn");
+  if (!btn) return;
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  window.OneSignalDeferred.push(function (OneSignal) {
+    function syncVisibility() {
+      const optedIn = OneSignal.User.PushSubscription.optedIn;
+      btn.classList.toggle("visible", !optedIn);
+    }
+    syncVisibility();
+    OneSignal.User.PushSubscription.addEventListener("change", syncVisibility);
+    btn.addEventListener("click", () => {
+      OneSignal.Notifications.requestPermission();
+    });
+  });
+}
+
 function registerServiceWorker() {
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
@@ -209,4 +226,5 @@ function registerServiceWorker() {
 
 init();
 setupInstallPrompt();
+setupNotifyButton();
 registerServiceWorker();
