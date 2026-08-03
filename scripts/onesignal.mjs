@@ -34,6 +34,6 @@ export async function sendNotification({ title, message, url, image }) {
   if (!res.ok) {
     throw new Error(`OneSignal API error ${res.status}: ${JSON.stringify(data)}`);
   }
-  console.log(`Notifica inviata: "${title}" (id ${data.id || "?"})`);
+  console.log(`Risposta OneSignal per "${title}": ${JSON.stringify(data)}`);
   return data;
 }
