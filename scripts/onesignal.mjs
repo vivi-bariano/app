@@ -16,7 +16,7 @@ async function getSubscribedPlayerIds(appId, apiKey) {
     throw new Error(`OneSignal players API error ${res.status}: ${JSON.stringify(data)}`);
   }
   return (data.players || [])
-    .filter(p => p.notification_types === 1)
+    .filter(p => p.identifier)
     .map(p => p.id);
 }
 
