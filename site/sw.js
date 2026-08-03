@@ -1,6 +1,6 @@
 importScripts("https://cdn.onesignal.com/sdks/OneSignalSDKWorker.js");
 
-const CACHE_NAME = "vivi-bariano-v2";
+const CACHE_NAME = "vivi-bariano-v3";
 const APP_SHELL = [
   "./",
   "index.html",
@@ -29,8 +29,9 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
+  if (event.request.method !== "GET") return;
   event.respondWith(
-    fetch(event.request)
+    fetch(event.request, { cache: "no-store" })
       .then(res => {
         const clone = res.clone();
         caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
