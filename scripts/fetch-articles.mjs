@@ -101,38 +101,57 @@ async function main() {
 
   // Substack blocca le richieste dirette dai server di GitHub Actions (403),
   // indipendentemente dallo User-Agent: probabilmente un blocco per intervallo IP.
-  // Come fallback, passiamo attraverso un proxy pubblico che effettua la
-  // richiesta con un altro indirizzo IP.
-  const attempts = [
+  // Come fallback, passiamo attraverso alcuni proxy pubblici che rifanno la
+  // richiesta da un altro indirizzo IP. Sono servizi gratuiti e a volte non
+  // disponibili: li proviamo in ordine e ripetiamo il giro qualche volta.
+  const endpoints = [
     { label: "diretto", url: feedUrl },
-    { label: "proxy allorigins", url: `https://api.allorigins.win/raw?url=${encodeURIComponent(feedUrl)}` },
-    { label: "proxy r.jina.ai", url: `https://r.jina.ai/${feedUrl}` }
+    { label: "allorigins", url: `https://api.allorigins.win/raw?url=${encodeURIComponent(feedUrl)}` },
+    { label: "codetabs", url: `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(feedUrl)}` },
+    { label: "corsproxy.io", url: `https://corsproxy.io/?url=${encodeURIComponent(feedUrl)}` },
+    { label: "r.jina.ai", url: `https://r.jina.ai/${feedUrl}` }
   ];
+
+  const REQUEST_TIMEOUT_MS = 20000;
+  const ROUNDS = 3;
+  const PAUSE_BETWEEN_ROUNDS_MS = 15000;
+
+  async function tryFetch(endpoint) {
+    const res = await fetch(endpoint.url, {
+      headers: browserHeaders,
+      signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS)
+    });
+    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+    const text = await res.text();
+    if (!text.includes("<item") && !text.includes("<rss")) {
+      throw new Error(`risposta senza contenuto RSS riconoscibile (${text.slice(0, 120).replace(/\s+/g, " ")})`);
+    }
+    return text;
+  }
 
   let xml = null;
   const errors = [];
-  for (const attempt of attempts) {
-    try {
-      const res = await fetch(attempt.url, { headers: browserHeaders });
-      if (!res.ok) {
-        errors.push(`${attempt.label}: ${res.status} ${res.statusText}`);
-        continue;
+  for (let round = 1; round <= ROUNDS && !xml; round++) {
+    for (const endpoint of endpoints) {
+      try {
+        xml = await tryFetch(endpoint);
+        console.log(`Feed scaricato con successo (${endpoint.label}, giro ${round})`);
+        break;
+      } catch (err) {
+        errors.push(`giro ${round} · ${endpoint.label}: ${err.message}`);
       }
-      const text = await res.text();
-      if (!text.includes("<item") && !text.includes("<rss")) {
-        errors.push(`${attempt.label}: risposta senza contenuto RSS riconoscibile (${text.slice(0, 120).replace(/\s+/g, " ")})`);
-        continue;
-      }
-      xml = text;
-      console.log(`Feed scaricato con successo (${attempt.label})`);
-      break;
-    } catch (err) {
-      errors.push(`${attempt.label}: ${err.message}`);
+    }
+    if (!xml && round < ROUNDS) {
+      await new Promise(r => setTimeout(r, PAUSE_BETWEEN_ROUNDS_MS));
     }
   }
 
   if (!xml) {
-    throw new Error(`Fetch feed fallito su tutti i tentativi:\n${errors.map(e => `  - ${e}`).join("\n")}`);
+    // Feed momentaneamente irraggiungibile (Substack + proxy tutti giù): non è
+    // un problema del sito, quindi non facciamo fallire il workflow. Lasciamo
+    // articles.json com'è; al run successivo si riprova.
+    console.log(`::warning::Feed Substack non raggiungibile in questo run, articoli non aggiornati. Tentativi:\n${errors.map(e => `  - ${e}`).join("\n")}`);
+    return;
   }
 
   let articles = parseRss(xml);
