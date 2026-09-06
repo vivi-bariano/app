@@ -2,7 +2,11 @@ name: Aggiorna articoli da Substack
 
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    # Un articolo esce circa una volta a settimana: un controllo al giorno basta.
+    # 06:00 UTC = 08:00 in Italia (ora legale) / 07:00 (ora solare).
+    # Si può comunque lanciare a mano da Actions -> Run workflow subito dopo
+    # aver pubblicato un nuovo articolo su Substack.
+    - cron: "0 6 * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -14,10 +18,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: "22"
 
